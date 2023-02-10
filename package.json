@@ -1,0 +1,22 @@
+{
+  "name": "c.md",
+  "version": "1.0.0",
+  "description": "## Challenge 9  This challenge is to create a README.md file in which you have to put the name of the project, your GitHub user, email and some requirements ## User Story - AS A developer - I WANT a README generator - SO THAT I can quickly create a professional README for a new project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeacqueline/c.md.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeacqueline/c.md/issues"
+  },
+  "homepage": "https://github.com/Jeacqueline/c.md#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
