@@ -1,6 +1,6 @@
 
   
-  # README file 
+  # c.md readme file generator
 
   ## Table of Contents:
 
@@ -13,7 +13,7 @@
 ### [Questions](#questions)
 
 ## Description:
-This project is a readme generator
+This is my c.md generator 🤓
 
 
 ## ## License
@@ -28,14 +28,14 @@ This project is licensed under the MIT license. For more information, see [LICEN
 ### to install this project we need to install node.js
 
 ## Use:
-### Create a new Readme file with node.js
+### install inquirer@8.2.4
 
 ## Contributions:
-### install inquirer@8.2.4
+### Through node.js
 
 ## Test:
 ### Enter the following commands to test this application:
-### through node.js
+### with node.js
 
 ## Questions Section
 ### If you have any questions, please do not hesitate to contact me through:
