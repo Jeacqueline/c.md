@@ -1,5 +1,5 @@
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 const inquirer =require('inquirer');
 
 const questions = [
@@ -7,8 +7,8 @@ const questions = [
         type: 'input',
         message: 'What is the name of your project?',
         name: 'title',
-        validate: titleInput => {
-            if (titleInput) {
+        validate: nameInput => {
+            if (nameInput) {
                 return true;
             }
             console.log('Please, enter a project name');
@@ -19,9 +19,9 @@ const questions = [
         type: 'list',
         message: 'What is the license for this project?',
         name: 'license',
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
-        validate: titleInput => {
-            if (titleInput) {
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'None'],
+        validate: licenseInput => {
+            if (licenseInput) {
                 return true;
             }
             console.log('Please, enter a license');
@@ -30,49 +30,85 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What is your GitHub username?',
-        name: 'github',
-        validate: titleInput => {
-            if (titleInput) {
+        message: 'Please provide a description of your project',
+        name: 'description',
+        validate: descriptionInput => {
+            if (descriptionInput) {
                 return true;
             }
-            console.log('Please, enter a GitHub username');
+            console.log('Please, enter a project description');
             return false;
         }
     },
     {
         type: 'input',
-        message: 'What is your email address?',
+        message: 'What steps are necessary to install your project?',
+        name: 'installation',
+        validate: installationInput => {
+            if (installationInput) {
+                return true;
+            }
+            console.log('Please, enter some steps required to install your project');
+            return false;
+        }
+    },
+    {
+        type: 'input',
+        message: 'what is the utility of your project?',
+        name: 'use',
+        validate: useInput => {
+            if (useInput) {
+                return true;
+            }
+            console.log('Please, provide a utility of your project');
+            return false;
+        }
+    },
+    {
+        type: 'input',
+        message: 'What guidelines should others follow in order to contribute?',
+        name: 'contributions',
+        validate: contributionsInput => {
+            if (contributionsInput) {
+                return true;
+            }
+            console.log('Please enter contribution guidelines');
+            return false;
+        }
+    },
+    {
+        type: 'input',
+        message: 'How to test this project?',
+        name: 'test',
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            }
+            console.log('Please explain how to test this project');
+            return false;
+        }
+    },
+    {
+        type: 'input',
+        message: 'What is your github username so others can contact you with questions??',
+        name: 'askMeAboutIt',
+        validate: AskMeAboutItInput => {
+            if (AskMeAboutItInput) {
+                return true;
+            }
+            console.log('Please enter a valid github username');
+            return false;
+        }
+    },
+    {
+        type: 'input',
+        message: 'What is your email address so that there is another way to contact you in case of questions?',
         name: 'email',
-        validate: titleInput => {
-            if (titleInput) {
+        validate: emailInput => {
+            if (emailInput) {
                 return true;
             }
             console.log('Please, enter an email address');
-            return false;
-        }
-    },
-    {
-        type: 'input',
-        message: 'What is the purpose of this project?',
-        name: 'purpose',
-        validate: titleInput => {
-            if (titleInput) {
-                return true;
-            }
-            console.log('Please, enter the purpose of this project');
-            return false;
-        }
-    },
-    {
-        type: 'input',
-        message: 'What are the requirements for running this project?',
-        name: 'requirements',
-        validate: titleInput => {
-            if (titleInput) {
-                return true;
-            }
-            console.log('Please, enter the requirements for running this project');
             return false;
         }
     }
